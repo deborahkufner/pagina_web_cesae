@@ -1,0 +1,43 @@
+/* Resetar margens e paddings padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar-custom {
+    background-color: #ffffff !important;
+    min-height: 30px !important; /* Define uma altura menor */
+    padding-top: 5px !important;  /* Reduz espaço superior */
+    padding-bottom: 5px !important; /* Reduz espaço inferior */
+    border: none !important;
+    display: flex;
+    align-items: center; /* Centraliza tudo verticalmente */
+}
+
+.navbar-brand {
+    font-size: 0.75rem !important;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0c0a40 !important;
+    position: absolute;/* Centralização absoluta */
+    left: 50%;
+    top: 55%; /* Aumentamos de 50% para 55% para "descer" o texto visualmente */
+    transform: translate(-50%, -50%);
+    margin: 0 !important;
+    line-height: 1; /* Garante que não haja espaço extra de linha */
+    white-space: nowrap;
+}   
+
+body, header {
+    background-color:#9ba8f2 !important; /* cor de fundo lavanda muito claro */
+    color: #0c0a40 ;   /* cor da fonte */
+    display: block;
+}
+
+/*  Remover bordas ou sombras automáticas do header */
+header {
+    border: none;
+    outline: none;
+}
