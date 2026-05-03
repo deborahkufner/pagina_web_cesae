@@ -1,72 +1,106 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Índigo Bordados</title>
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦋</text></svg>"
-    />
+    <title>Indigo Bordados</title>
+    <link rel="icon" type="image/svg+xml" href="https://api.iconify.design/mdi/information.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/style.css" />
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Encode+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../assets/bootstrap.min.css" />
-  </head>
+    <link rel="stylesheet" href="../assets/style.css" />
 
-  <body>
+</head>
 
-  <nav class="navbar navbar-custom">
-    <div class="container-fluid"> 
-        <a class="navbar-brand mx-auto text-center" href="../pages/venda.html">
-            10% de desconto na primeira compra
+<body>
+
+    <!-- Barra Branca Fixa -->
+    <nav class="navbar navbar-custom">
+        <div class="container-fluid d-flex justify-content-between align-items-center"></div> <!-- Equilíbrio visual -->
+
+        <a class="navbar-brand m-0 text-center" href="../pages/venda.html">
+            10% DE DESCONTO NA PRIMEIRA COMPRA
         </a>
-        
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav flex-column mb-2 mb-lg-0">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </li>
-      </ul>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>
-</div>
-</div>
-      </div>
+        </div>
     </nav>
 
+    <!-- Conteúdo do Menu -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav flex-column p-3">
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/colecao.html">Coleção</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/vendas.html">Encomendar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/sobre-mim.html">Sobre Mim</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container py-5">
+        <div class="row align-items-center conteudo-principal">
+            <div class="col-md-6"> <!-- Coluna esquerda: logo + frase -->
+                <div class="marca">
+                    <span class="linha1">indigo</span>
+                    <span class="linha2">bordados</span>
+                </div>
+
+                <p class="frase-inicial">
+                    Nasce do encontro entre cor, textura e tempo: peças artesanais construídas com anos de técnica. Cada
+                    ponto carrega significado. Cada detalhe transforma o simples em extraordinário.
+                </p>
+
+                <div class="botoes-container">
+                    <a href="../pages/vendas.html" class="btn-link">[ faça sua encomenda ]</a>
+                    <a href="../pages/colecao.html" class="btn-link">[ coleção ]</a>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end"> <!-- Coluna da direita: imagem -->
+                <img src="../assets/van.jpeg" class="primeira-imagem img-fluid">
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="container d-flex justify-content-between align-items-center">
+        <span class="footer-copy">© Indigo Bordados — 2026</span>
+
+        <div class="footer-links">
+            <a href="https://instagram.com/indigobordados" 
+               target="_blank" 
+               rel="noopener noreferrer">
+               @indigobordados
+            </a>
+
+            <a href="mailto:indigobordados@gmail.com" 
+               target="_blank" 
+               rel="noopener noreferrer">
+               indigobordados@gmail.com
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
     <script src="../assets/main.js"></script>
     <script src="../assets/bootstrap.bundle.min.js"></script>
-  </body>
+
+
+</body>
+
 </html>

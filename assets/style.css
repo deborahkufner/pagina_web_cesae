@@ -5,34 +5,241 @@
     box-sizing: border-box;
 }
 
+/* ----NAVBAR ------------------------------------------------------------- */
+
+.navbar {
+    background-color: #1a17ad !important;
+    /* Substitua pelo código da cor desejada */
+}
+
 .navbar-custom {
     background-color: #ffffff !important;
-    min-height: 30px !important; /* Define uma altura menor */
-    padding-top: 5px !important;  /* Reduz espaço superior */
-    padding-bottom: 5px !important; /* Reduz espaço inferior */
-    border: none !important;
+    min-height: 52px !important;
+    padding: 0 20px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(10, 10, 61, 0.08);
+    /* linha sutil */
+    z-index: 1050;
     display: flex;
-    align-items: center; /* Centraliza tudo verticalmente */
+    align-items: center;
+}
+
+/* ----sem contorno da NAVBAR  */
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#navbarSupportedContent .nav-link {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0c0a40 !important;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(10, 10, 61, 0.05);
+    transition: background 0.2s, padding-left 0.2s;
+    /*ver com o professor */
+}
+
+#navbarSupportedContent .nav-link:hover {
+    background: #f5f4f0;
+    padding-left: 32px;
+}
+
+/* 2. Faz o menu "brotar" sobre a area bege */
+#navbarSupportedContent {
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(10, 10, 61, 0.08);
+    box-shadow: 0 8px 24px rgba(10, 10, 61, 0.07);
+}
+
+.navbar-nav {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .navbar-brand {
-    font-size: 0.75rem !important;
+    font-size: 0.65rem !important;
     font-weight: 500;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: #0c0a40 !important;
-    position: absolute;/* Centralização absoluta */
+    color: #080631 !important;
+    position: absolute;
     left: 50%;
-    top: 55%; /* Aumentamos de 50% para 55% para "descer" o texto visualmente */
+    top: 50%;
     transform: translate(-50%, -50%);
-    margin: 0 !important;
-    line-height: 1; /* Garante que não haja espaço extra de linha */
     white-space: nowrap;
-}   
+    text-decoration: none;
+}
 
-body, header {
-    background-color:#9ba8f2 !important; /* cor de fundo lavanda muito claro */
-    color: #0c0a40 ;   /* cor da fonte */
+.marca {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    color: #0a0a3d;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 8px rgba(10, 10, 61, 0.28);
+    /* ← sombra sutil */
+}
+
+.marca .linha1 {
+    display: block;
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-weight: 510;
+    line-height: 0.85;
+    letter-spacing: -1px;
+}
+
+.marca .linha2 {
+    display: block;
+    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    font-weight: 300;
+    line-height: 0.85;
+    margin-top: 4px;
+    margin-left: clamp(10px, 4vw, 88px);
+    letter-spacing: -1px;
+}
+
+.frase-inicial {
+    margin-top: 20px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    text-align: left;
+    padding-right: 12px;
+    max-width: 420px;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #1a1a4e;
+}
+
+.botoes-container {
+    margin-top: 32px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.btn-link {
+    font-family: "Roboto", sans-serif;
+    /* mesma fonte da frase */
+    font-size: 0.9rem;
+    /* aumentado */
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #0a0a3d;
+    display: inline-block;
+    opacity: 0.75;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-link:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-link:hover {
+    opacity: 1;
+    letter-spacing: 2px;
+    color: #4318c3;
+}
+
+.primeira-imagem {
+    max-width: 400px;
+    /* ajusta aqui */
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    opacity: 0;
+    margin: 0 auto;
+    /* centralizar no mobile */
+    transform: translateY(12px) scale(0.97);
+    animation: surgirImagem 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.4s;
+    box-shadow: 0 16px 48px rgba(10, 10, 61, 0.22);
+    border-radius: 4px;
+}
+
+/* mobile first ------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .botoes-container {
+        gap: 20px;
+    }
+
+    .btn-link {
+        font-size: 0.8rem;
+        white-space: normal;
+        display: inline-block;
+        cursor: default;
+    }
+}
+
+/* Ajuste específico para mobile ------------------------------------------- */
+@media (max-width: 768px) {
+    .container.py-5 {
+        padding-top: 72px !important;
+        /* empurra o conteúdo para baixo */
+    }
+
+    .conteudo-principal {
+        padding-top: 0 !important;
+        /* remove padding extra que possa existir */
+    }
+}
+
+@keyframes surgirImagem {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ── LAYOUT ──----------------------------------------------------------------- */
+.conteudo-principal {
+    align-items: center;
+    padding-top: 1px;
+    cursor: default !important;
+}
+
+.conteudo-principal a.btn-link {
+    cursor: pointer !important;
+}
+
+.conteudo-principal .col-md-6:last-child {
+    justify-content: center;
+    padding-top: 32px;
+}
+
+body,
+header {
+    background-color: #f4efe1 !important;
+    /* cor de fundo */
+    color: #0c0a40;
+    /* cor da fonte */
     display: block;
 }
 
@@ -41,3 +248,172 @@ header {
     border: none;
     outline: none;
 }
+
+.footer {
+    background: #e0dfc8;
+    padding: 20px 0;
+    margin-top: 80px;
+    border-top: 1px solid rgba(10, 10, 61, 0.1);
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    color: #0a0a3d;
+}
+
+.footer-links a {
+    margin-left: 20px;
+    font-size: 0.75rem;
+    color: #0a0a3d;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/*  sobre mim ------------------------------------------------------------------- */
+.sobre-mim-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.minha-photo {
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.minha-photo img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 4px solid rgb(255, 255, 254);
+}
+
+.nome-titulo {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.about-texto {
+    text-align: left;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.8;
+
+    color: #555;
+}
+
+.about-texto p {
+    margin-bottom: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-photo img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+
+/* ----CARDS --------------------------------------------------------------------------- */
+
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 12px;
+    /* espaço interno da imagem */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 !important;
+    /* remove padding do card (estava 10px) */
+    margin-top: 30px;
+    background: white;
+    border-radius: 8px;
+    /* opcional: bordas suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+}
+
+.card-body {
+    padding: 15px 10px !important;
+    padding-bottom: 0px !important;
+    /* reduz espaço inferior */
+    display: flex;
+    /*preço fixado ao final */
+    flex-direction: column;
+    flex: 1;
+}
+
+.botoes-container {
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: 10px; /* distancia do comprar ao final do card*/
+   
+}
+
+.card-text {
+    margin-bottom: 1px;  /* espaço pequeno abaixo do preço */
+}
+
+/* NOME */
+.card-title {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #140754;
+}
+
+/* PREÇO */
+.card-text.fw-bold {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #a9370a;
+}
+
+ /* ----- Formulario ------------------------------------------------------------- */
+
+ .titulo-checkout {
+    font-family:"Encode Sans Semi Expanded", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    color: #140754;
+}
+
+.form-label.required::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+form {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 14px;
+}
+
