@@ -8,9 +8,12 @@
 /* ----NAVBAR ------------------------------------------------------------- */
 
 .navbar {
-    background-color: #1a17ad !important;
-    /* Substitua pelo código da cor desejada */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
+
 
 .navbar-custom {
     background-color: #ffffff !important;
@@ -59,14 +62,14 @@
 
 /* 2. Faz o menu "brotar" sobre a area bege */
 #navbarSupportedContent {
-    position: absolute;
-    top: 52px;
+    position: fixed;
+    top: 52px; /* altura da navbar */
     left: 0;
     width: 100%;
-    z-index: 1000;
     background: #ffffff;
     border-bottom: 1px solid rgba(10, 10, 61, 0.08);
     box-shadow: 0 8px 24px rgba(10, 10, 61, 0.07);
+    z-index: 2000;
 }
 
 .navbar-nav {
@@ -88,6 +91,30 @@
     text-decoration: none;
 }
 
+.nav-small {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 30px !important;
+}
+
+/* ALERTA DO FORM ------------------------------------------------------------*/
+.alerta-auto {
+    position: fixed;
+    top: 60px; /* altura da navbar */
+    right: 20px;
+    background: #ffe8a3;
+    padding: 12px 18px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity .4s ease;
+    z-index: 99999;
+}
+.alerta-auto.show {
+    opacity: 1;
+}
+
+/* minha marca ------------------------------------------------------------*/
 .marca {
     font-family: "Encode Sans Semi Expanded", sans-serif;
     display: flex !important;
@@ -170,21 +197,32 @@
 
 .primeira-imagem {
     max-width: 400px;
-    /* ajusta aqui */
     width: 100%;
     display: block;
     margin-left: auto;
     opacity: 0;
     margin: 0 auto;
-    /* centralizar no mobile */
     transform: translateY(12px) scale(0.97);
-    animation: surgirImagem 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: surgirImagem 1.4s cubic-bezier(0.22, 1, 0.36, 3) forwards;
     animation-delay: 0.4s;
-    box-shadow: 0 16px 48px rgba(10, 10, 61, 0.22);
+    box-shadow: 0 16px 48px rgba(10, 10, 61, 0.32);
     border-radius: 4px;
 }
 
+/* FADE ---------------------------------------------------------------------- */
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* mobile first ------------------------------------------------------------- */
+
 @media (max-width: 480px) {
     .botoes-container {
         gap: 20px;
@@ -221,7 +259,7 @@
 /* ── LAYOUT ──----------------------------------------------------------------- */
 .conteudo-principal {
     align-items: center;
-    padding-top: 1px;
+    padding-top: 40px;
     cursor: default !important;
 }
 
@@ -234,13 +272,22 @@
     padding-top: 32px;
 }
 
+.container.py-5 {
+    flex: 1; /* Isso faz o conteúdo crescer e empurrar o footer */
+    padding-top: 72px !important;
+}
+
 body,
 header {
     background-color: #f4efe1 !important;
-    /* cor de fundo */
     color: #0c0a40;
-    /* cor da fonte */
     display: block;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /*  Remover bordas ou sombras automáticas do header */
@@ -249,11 +296,41 @@ header {
     outline: none;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 100% da altura da viewport */
+}
+
+main {
+  flex: 1;
+}
+
+/* ---DESTAQUES -------------------------------------------------------------------- */
+
+.destaque-box {
+    background: #f8f7f2;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.destaque-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.destaque-icon {
+    font-size: 2.5rem;
+    color: #1a17ad;
+}
+
+
 .footer {
     background: #e0dfc8;
     padding: 20px 0;
-    margin-top: 80px;
+    margin-top: 0px; 
     border-top: 1px solid rgba(10, 10, 61, 0.1);
+    width: 100%;
 }
 
 .footer-copy {
@@ -340,8 +417,7 @@ header {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
-    padding: 12px;
-    /* espaço interno da imagem */
+    padding: 12px;  /* espaço interno da imagem */
 }
 
 .card {
@@ -349,36 +425,40 @@ header {
     flex-direction: column;
     height: 100%;
     padding: 0 !important;
-    /* remove padding do card (estava 10px) */
     margin-top: 30px;
     background: white;
     border-radius: 8px;
-    /* opcional: bordas suaves */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
 }
 
 .card-body {
     padding: 15px 10px !important;
     padding-bottom: 0px !important;
-    /* reduz espaço inferior */
-    display: flex;
-    /*preço fixado ao final */
-    flex-direction: column;
+    display: flex;/* reduz espaço inferior */
+    flex-direction: column;/*preço fixado ao final */
     flex: 1;
+}
+
+.card-img-top {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.18);
+  filter: brightness(1.15);
 }
 
 .botoes-container {
     margin: 0;
     margin-top: auto;
     margin-bottom: 10px; /* distancia do comprar ao final do card*/
-   
 }
 
 .card-text {
     margin-bottom: 1px;  /* espaço pequeno abaixo do preço */
 }
 
-/* NOME */
+/* NOME --------------------------------------------------------------------------- */
 .card-title {
     font-family: "Encode Sans Semi Expanded", sans-serif;
     font-size: 15px;
@@ -417,3 +497,316 @@ form {
     font-size: 14px;
 }
 
+.campo-encomenda {
+    color: #1a17ad;
+    font-weight: 600;
+}
+
+/* contactos --------------------------------------------------------------*/
+.titulo-contacto {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #140754;
+    letter-spacing: 1px;
+    padding-top: 35px;
+}
+
+.contact-info {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 1rem;
+    color: #0a0a3d;
+}
+
+.contact-link {
+    color: #1a17ad;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: #4318c3;
+}
+
+/* Fade-in */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== TOAST =============== */
+.toast-indigo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffffff;
+    color: #333;
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .4s ease;
+    z-index: 9999;
+    font-size: 14px;
+}
+
+/* Quando aparecer */
+.toast-indigo.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== DARK MODE ===== */
+
+/* Dark mode */
+body.dark .toast-indigo {
+    background: #1c1c1c;
+    color: #f2f2f2;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+body.dark {
+    background-color: #0f0f0f;
+    color: #f2f2f2;
+}
+
+/* Navbar */
+body.dark .navbar-custom {
+    background-color: #1a1a1a !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark .nav-link {
+    color: #f2f2f2 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+body.dark .nav-link:hover {
+    background: #222;
+}
+
+/* Formulário */
+body.dark .form-control {
+    background: #1c1c1c;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+/* Modo escuro - cores base */
+body.dark {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark .navbar-custom {
+    background-color: #1e1e1e !important;
+}
+
+body.dark .navbar-brand,
+body.dark .nav-link {
+    color: #e0e0e0 !important;
+}
+
+body.dark .nav-link:hover {
+    color: #a0a0a0 !important;
+}
+
+body.dark .marca .linha1,
+body.dark .marca .linha2 {
+    color: #e0e0e0;
+}
+
+body.dark .frase-inicial {
+    color: #b0b0b0;
+}
+
+body.dark .btn-link {
+    color: #e0e0e0;
+}
+
+body.dark .btn-link:hover {
+    color: #a0a0a0;
+}
+
+body.dark .destaque-box {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark .destaque-box h5 {
+    color: #e0e0e0;
+}
+
+body.dark .text-muted {
+    color: #a0a0a0 !important;
+}
+
+body.dark .footer {
+    background-color: #0d0d0d !important;
+    border-top-color: #333;
+}
+
+body.dark .footer-copy,
+body.dark .footer-links a {
+    color: #a0a0a0;
+}
+
+body.dark .footer-links a:hover {
+    color: #e0e0e0;
+}
+
+body.dark .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+body.dark .btn-outline-dark {
+    border-color: #e0e0e0;
+    color: #e0e0e0;
+}
+
+body.dark .btn-outline-dark:hover {
+    background-color: #e0e0e0;
+    color: #121212;
+}
+
+/* Ajuste para o vídeo do Instagram no modo escuro */
+body.dark .instagram-media {
+    background: #1e1e1e !important;
+}
+
+/* ===== CONTACTOS — DARK MODE ============================================ */
+
+/* Título */
+body.dark .titulo-contacto {
+    color: #ffffff !important;
+}
+
+/* Caixa de informações */
+body.dark .contact-info {
+    background-color: transparent !important;
+    color: #e6e6e6 !important;
+}
+
+/* Texto dentro da contact-info */
+body.dark .contact-info p,
+body.dark .contact-info strong {
+    color: #e6e6e6 !important;
+}
+
+/* Links */
+body.dark .contact-link {
+    color: #9ecbff !important;
+}
+
+body.dark .contact-link:hover {
+    color: #cfe6ff !important;
+}
+
+/* Footer */
+body.dark .footer {
+    background-color: #0f0f0f !important;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark .footer-copy,
+body.dark .footer-links a {
+    color: #e6e6e6 !important;
+}
+
+body.dark .footer-links a:hover {
+    color: #ffffff !important;
+}
+
+/* Mapa (iframe) */
+body.dark .map-container iframe {
+    filter: grayscale(100%) invert(90%) contrast(90%);
+    border-radius: 8px;
+}
+
+
+
+/* ===== ENCOMENDAR — DARK MODE ===== */
+
+/* Título */
+body.dark .titulo-checkout {
+    color: #ffffff !important;
+}
+
+/* Container principal */
+body.dark .container {
+    color: #e6e6e6 !important;
+}
+
+/* Labels */
+body.dark label {
+    color: #e6e6e6 !important;
+}
+
+/* Inputs */
+body.dark .form-control {
+    background: #1c1c1c !important;
+    color: #ffffff !important;
+    border: 1px solid #333 !important;
+}
+
+body.dark .form-control:focus {
+    background: #222 !important;
+    border-color: #555 !important;
+    color: #ffffff !important;
+}
+
+/* Botões */
+body.dark .btn {
+    background-color: #333 !important;
+    color: #ffffff !important;
+    border-color: #444 !important;
+}
+
+body.dark .btn:hover {
+    background-color: #444 !important;
+}
+
+/* Textos dentro do formulário */
+body.dark .mb-3,
+body.dark .form-text {
+    color: #e6e6e6 !important;
+}
+
+
+
+/* ===== SOBRE MIM — DARK MODE ===== */
+
+/* Container principal */
+body.dark .sobre-mim-container {
+    background-color: #0f0f0f !important;
+    color: #e6e6e6 !important;
+}
+
+/* Título */
+body.dark .nome-titulo {
+    color: #ffffff !important;
+}
+
+/* Texto */
+body.dark .about-texto p {
+    color: #e6e6e6 !important;
+}
+
+/* Foto */
+body.dark .minha-photo img {
+    filter: brightness(0.85) contrast(1.1);
+    border-radius: 8px;
+}
+
+/* Footer */
+body.dark .footer {
+    background-color: #0f0f0f !important;
+}

@@ -15,140 +15,154 @@
     <link rel="stylesheet" href="../assets/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/style.css" />
 </head>
-</nav>
+
 <body>
     
-<!-- Conteúdo do Menu  NAVBAR sem a frase desconto.-->
-       <nav class="navbar navbar-custom">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
+<!-- NAVBAR -->
+<nav class="navbar navbar-custom">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"      data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav flex-column p-3">
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav flex-column p-3">
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/index.html">Home</a>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="../pages/index.html" target="_blank" rel="noopener noreferrer">Home</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/colecao.html">Coleção</a>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="../pages/colecao.html" target="_blank" rel="noopener noreferrer">Coleção</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/vendas.html">Encomendar</a>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="../pages/vendas.html" target="_blank" rel="noopener noreferrer">Encomendar</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/contacto.html">Contactos</a>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="../pages/contacto.html" target="_blank" rel="noopener noreferrer">Contacto</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fw-bold" href="../pages/sobre-mim.html">Sobre Mim</a>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="../pages/sobre-mim.html" target="_blank" rel="noopener noreferrer">Sobre Mim</a>
-        </li>
-
-    </ul>
-</div>
+        </ul>
+    </div>
 </nav>
 
+<!-- FORMULÁRIO -->
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
+
             <h2 class="titulo-checkout text-center mb-4">Finalizar Encomenda</h2>
 
-    <form>
+            <form>
 
-        <!-- Nome completo -->
-        <div class="mb-3">
-            <label for="nome" class="form-label required">Nome completo</label>
-            <input type="text" class="form-control" id="nome" required>
-        </div>
-
-        <!-- Email -->
-        <div class="mb-3">
-            <label for="email" class="form-label required">E-mail</label>
-            <input type="email" class="form-control" id="email" required>
-        </div>
-            
-        <!-- Telemóvel -->
-        <div class="mb-3">
-            <label for="nome" class="form-label required">Telemóvel</label>
-            <input type="text" class="form-control" id="nome" required>
-        </div>
-
-        <!-- Morada -->
-        <div class="mb-3">
-            <label for="morada" class="form-label required">Endereço de entrega</label>
-            <textarea class="form-control" id="morada" rows="3" maxlength="150" required></textarea>
-            <div class="form-text">Máximo 150 caracteres</div>
-        </div>
-
-        <!-- NIF (opcional) -->
-        <div class="mb-3">
-            <label for="nif" class="form-label">NIF (opcional)</label>
-            <input type="text" class="form-control" id="nif" maxlength="9">
-        </div>
-
-        <!-- Dados do cartão -->
-        <div class="mb-3">
-            <label class="form-label required">Dados do cartão</label>
-
-            <input type="text" class="form-control mb-2" placeholder="Número do cartão" required>
-
-            <div class="row">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="MM/AA" required>
+                <!-- Nome completo -->
+                <div class="mb-3">
+                    <label for="nome" class="form-label required">Nome completo</label>
+                    <input type="text" class="form-control" id="nome" required>
                 </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="CVV" required>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label required">E-mail</label>
+                    <input type="email" class="form-control" id="email" required>
                 </div>
-            </div>
+                
+                <!-- Telemóvel -->
+                <div class="mb-3">
+                    <label for="telefone" class="form-label required">Telemóvel</label>
+                    <input type="text" class="form-control" id="telefone" required>
+                </div>
+
+                <!-- Morada -->
+                <div class="mb-3">
+                    <label for="morada" class="form-label required">Endereço de entrega</label>
+                    <textarea class="form-control" id="morada" rows="3" maxlength="150" required></textarea>
+                    <div class="form-text">Máximo 150 caracteres</div>
+                </div>
+
+                <!-- NIF (opcional) -->
+                <div class="mb-3">
+                    <label for="nif" class="form-label">NIF (opcional)</label>
+                    <input type="text" class="form-control" id="nif" maxlength="9">
+                </div>
+
+                <!-- Descrição da Encomenda -->
+                <div class="mb-3">
+                    <label for="descricao" class="form-label fw-bold">
+                        Descrição da sua encomenda <span class="campo-encomenda">*</span>
+                    </label>
+
+                    <textarea 
+                        class="form-control" 
+                        id="descricao" 
+                        rows="4" 
+                        placeholder="Descreva aqui os detalhes da sua encomenda (cores, tamanho, estilo, referências...)"
+                        required>
+                    </textarea>
+
+                    <small class="text-muted">
+                        * Este campo é obrigatório apenas para encomendas personalizadas.
+                    </small>
+                </div>
+
+                <!-- Dados do cartão -->
+                <div class="mb-3">
+                    <label class="form-label required">Dados do cartão</label>
+
+                    <input type="text" class="form-control mb-2" placeholder="Número do cartão" required>
+
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="MM/AA" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="CVV" required>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="form-text text-muted mt-2" style="font-size: 0.85rem;">
+                    * itens obrigatórios
+                </p>
+
+                <!-- Botão -->
+                <button type="submit" class="btn btn-dark w-100 mt-3">
+                    Finalizar compra
+                </button>
+
+            </form>
+
         </div>
-        <p class="form-text text-muted mt-2" style="font-size: 0.85rem;">
-    * itens obrigatórios </p>
-
-        <!-- Botão -->
-        <button type="submit" class="btn btn-dark w-100 mt-3">
-            Finalizar compra
-        </button>
-
-    </form>
+    </div>
 </div>
 
-
-
-
-
-
-
-
-
-     <footer class="footer">
-    <div class="container d-flex justify-content-between align-items-center">
+<!-- FOOTER CORRIGIDO -->
+<footer class="footer w-100">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
         <span class="footer-copy">© Indigo Bordados — 2026</span>
 
         <div class="footer-links">
-            <a href="https://instagram.com/indigobordados" 
-               target="_blank" 
-               rel="noopener noreferrer">
-               @indigobordados
+            <a href="https://instagram.com/indigobordados" target="_blank" rel="noopener noreferrer">
+                @indigobordados
             </a>
 
-            <a href="mailto:indigobordados@gmail.com" 
-               target="_blank" 
-               rel="noopener noreferrer">
-               indigobordados@gmail.com
+            <a href="mailto:indigobordados@gmail.com" target="_blank" rel="noopener noreferrer">
+                indigobordados@gmail.com
             </a>
         </div>
     </div>
 </footer>
 
-    <!-- Scripts -->
-    <script src="../assets/main.js"></script>
-    <script src="../assets/bootstrap.bundle.min.js"></script>
+<!-- Scripts -->
+<script src="../assets/main.js"></script>
+<script src="../assets/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
